@@ -5,7 +5,7 @@ I love the simplicity of it, it let's me do alomst everything in my favorite exp
 
 An with the newest update it will introduce partial page updates, that don't go through the controller action anymore, and it will make reflexes lightning fast.
 
-## So how does a reflex action work (simplified)?
+## So how does a reflex action work (simplified)?
 
 * You **trigger a reflex** on the client (by data attribute, or in a stimulus method).
 * Your **server side `Reflex` is executed**, where ou can trigger Jobs, set instance variables, do db-stuff
@@ -25,7 +25,7 @@ that allow you to skip the controller action and instead render a partial, a vie
 In my application I have a timeline with 21 days where I can add orders to those days. Executing the controller action and rendering takes around 180ms,
 which is not horrible, but definitely not great.
 
-_image_needed_
+![timeline with orders](lighning-fast-actions-with-partial-updates/timeline.png)
 
 To delete an item in the timeline we can have a simple reflex:
 
