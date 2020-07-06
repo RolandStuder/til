@@ -66,9 +66,4 @@ end
 ```
 
 Now instead of doing all the controller action stuff, and rendering 21 days components. We just render one day component.
-So our time to exectute the reflex action goes down from 180ms to _benchmark_needed_
-
-## The comparison
-
-_video/gif_needed_
-
+So our time to exectute the reflex action goes down from 180ms to about 10ms (_benchmark_needed_).
