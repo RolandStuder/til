@@ -1,7 +1,7 @@
 # Use `refine` to monkey patch selectively
 
 Let's say we want to monkey patch some core class like string to enable coloring.
-We can it like that:
+We can do it like that:
 
 ```ruby
 class String
