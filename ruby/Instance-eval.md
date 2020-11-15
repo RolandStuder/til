@@ -8,20 +8,31 @@ class User
   def greet_with(greeting)
     greeting.call(self)
   end
+  
+  def name
+    "Roli"
+  end
 end
-hello = -> (user) { "Hello #{user.name}"}`
 
-User.first.greet_with(hello)
+hello = -> (user) { "Hello #{user.name}"}
+puts User.new.greet_with(hello)
 ````
 
 With an instance_eval we can do:
 ```ruby
 class User
-  def greet_with(&greeting)
+  def greet_with(greeting)
     instance_eval(&greeting)
   end
+  
+  def name
+    "Roli"
+  end
 end
+
 hello = proc { "Hello #{name}"}
+puts User.new.greet_with(hello)
+
 ```
 
 It needs to be a proc and cannot be a lambda as far as I understand. 
