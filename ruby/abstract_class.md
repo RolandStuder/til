@@ -1,4 +1,4 @@
-# Abstract classes
+# Abstract classes concern
 
 Not sure where to use them, I guess if you have a library and want to communicate to someone 
 which methods he has to implement in his class to make it work, you could provide an abstract class
