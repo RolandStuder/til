@@ -3,8 +3,10 @@
 Not sure where to use them, I guess if you have a library and want to communicate to someone 
 which methods he has to implement in his class to make it work, you could provide an abstract class
 
-So after reading this post on [Ruby Abstract Classes by Conner Jensen](https://www.connerjensen.com/blog/ruby-abstract-class/)
-and reading [this comment, suggesting to solve this with some metaprogramming] on reddit. I got curious.
+But after reading this post on [Ruby Abstract Classes by Conner Jensen](https://www.connerjensen.com/blog/ruby-abstract-class/)
+and reading
+[this comment, suggesting to solve this with some metaprogramming](https://www.reddit.com/r/ruby/comments/k0zgu6/i_wrote_a_post_to_better_understand_abstract/gdme7xy/) 
+on reddit,  I got curious on how I would implement this.
 
 I came up with the follwing implementation:
 
