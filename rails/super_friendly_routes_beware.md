@@ -36,7 +36,7 @@ resources :shops, path: "/", constraints: lambda { |request|
                                                  }
 ```
 
-Notes: Slugs are maybe not  nique between the two models. So there is a lot to consider here. 
+Notes: Slugs are maybe not unique between the two models. So there is a lot to consider here. 
 Check if it's acutally worth it having multiple resources directly under the root url with a friendly id.
 Especially since urls like those are not something you want to have to change later, or mess up.
 
