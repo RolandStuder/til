@@ -28,6 +28,7 @@ https://github.com/bibendi/activerecord-postgres_enum/issues/9
 ```ruby
 # Could not dump table "persons" because of following StandardError
 #   Unknown type 'person_relationship' for column 'relationship'
+```
 
 Rails doesnt' know how to handle that, so `rails db:schema:load` won't work.
 
