@@ -26,3 +26,5 @@ class CheckoutsController < ApplicationController
    end
 end
 ```
+
+A more flexible alternative would be https://github.com/makandra/active_type
