@@ -1,0 +1,28 @@
+# `becomes` can turn one model into another
+
+While designed for Single Table Inheritance, you can use the `becomes` method on an ActiveRecord model to turn one model into one of another class
+
+https://apidock.com/rails/ActiveRecord/Base/becomes
+
+> Returns an instance of the specified klass with the attributes of the current record. This is mostly useful in relation to single-table inheritance structures where you want a subclass to appear as the superclass. This can be used along with record identification in Action Pack to allow, say, Client &lt; Company to do something like render :partial =&gt; @client.becomes(Company) to render that instance using the companies/company partial instead of clients/client.
+
+> Note: The new instance will share a link to the same attributes as the original class. So any change to the attributes in either instance will affect the other.
+
+You can use this to to have context specific models. For example if you have an order, and you want to do specific validation only during checkout, then
+you might use this
+
+```ruby
+class Checkout < Order
+  validates_presence_of :phone_number
+end
+```
+
+So in a controller you can do?
+
+```ruby
+class CheckoutsController < ApplicationController
+   def new
+     @checkout = current_order.becomes Checkout
+   end
+end
+```
