@@ -52,5 +52,5 @@ In order to get everything within that block you need to use the viewcontext.
 ```
 
 This will use the viewcontext to capture all the outputed strings in that block, any arguments you give to capture, will be
-yielded to the block.
+passed to the block.
 
