@@ -2,18 +2,9 @@
 
 When you are creating our own slot like configuration methods for [view components](https://viewcomponent.org), 
 there is the issue tha if you call a block it will only return the last thing returned
-by the block, so if you want to do this:
+by the block.
 
-```erb
-<%= ListComponent.new(items: @posts) do |list| %>
-  <% list.display do |post|  %>
-    <h1><%= post.title %></h1>
-    <p><%= post.body %></p>
-  <% end %>
-<% end %>
-```
-
-And you component ruby file looks like this:
+So given this component:
 
 ```ruby
 class ListComponent < ViewComponent::Base
@@ -29,15 +20,28 @@ class ListComponent < ViewComponent::Base
     content # ensure that block is called
   end
 end    
+```
 
+And you try to use it like this:
 
-If you know call this block in your component template
+```erb
+<%= ListComponent.new(items: @posts) do |list| %>
+  <% list.display do |post|  %>
+    <h1><%= post.title %></h1>
+    <p><%= post.body %></p>
+  <% end %>
+<% end %>
+```
+
+If you use call this block in your component template
+
 ```erb
 <%= @items.each do |item|
   <%= @thing_to_capture.call(item) %>
 <% end %>
 ```
-It will only output `</h1>` as this it the last thing the block returns.
+
+It will only output `</p>` as this it the last thing the block returns.
 
 In order to get everything within that block you need to use the viewcontext.
 
